@@ -199,3 +199,7 @@
   color: #333;
   cursor: default;
 }
+
+.text-box {
+  white-space: pre-line;
+}

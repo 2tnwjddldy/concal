@@ -12,7 +12,7 @@ function App() {
         <p>2024.03 - 재직중 (2년 8개월) | 정규직 | QA 테스트 | 사원</p>
       </div>
       <hr/>
-      <div style={{ whiteSpace: "pre-line" }}>
+      <div className="text-box">
         <strong>우아한형제들</strong> 2026.04 - 수행중 (6개월)
 
         [담당 업무]
