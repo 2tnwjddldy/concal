@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
 import './App.css';
+import rogoImg1 from './assets/baeminImg.png';
+import rogoImg2 from './assets/sbiImg.png';
+import rogoImg3 from './assets/woongjinImg.png';
+import schoolImg from './assets/baewhaImg.png';
+import profileImg from './assets/profileImg.jpg';
 
 // 프로젝트 및 경험 데이터
 const projectsData = [
@@ -9,7 +14,7 @@ const projectsData = [
     title: "우아한형제들 결제/선물하기/쿠폰 플랫폼 QA",
     period: "2026.04 ~ 현재",
     role: "QA Engineer (대무자 / 파트 리드)",
-    icon: "src/assets/우아한형제들.png", // 이미지 파일 경로나 URL로 변경
+    icon: <img src={rogoImg1} alt="우아한형제들 로고"/>, // 이미지 파일 경로나 URL로 변경
     domain: "O2O 플랫폼 / 결제·선물하기·프로모션",
     tasks: [
       "결제, 선물하기, 쿠폰/프로모션 관련 신규 기능 및 고도화 요구사항 분석 및 테스트 설계·수행",
@@ -28,7 +33,7 @@ const projectsData = [
     title: "SBI저축은행 사이다뱅크 멀티 플랫폼 고도화 QA",
     period: "2026.01 ~ 2026.03",
     role: "QA Engineer",
-    icon: "src/assets/sbi저축은행.png",
+    icon: <img src={rogoImg2} alt="SBI저축은행 로고"/>,
     domain: "금융권 (모바일 뱅킹 및 저축은행 플랫폼)",
     tasks: [
       "App (Android/iOS), Mobile Web, PC Web 멀티 플랫폼 요구사항 분석 및 기획서 기반 검증",
@@ -46,7 +51,7 @@ const projectsData = [
     title: "웅진씽크빅 스마트 학습 플랫폼 및 패밀리 앱 QA",
     period: "2024.07 ~ 2026.01",
     role: "QA Engineer (스프린트 리드)",
-    icon: "src/assets/웅진씽크빅.png",
+    icon: <img src={rogoImg3} alt="웅진씽크빅 로고"/>,
     domain: "에듀테크 (EdTech) 및 스마트 교육 콘텐츠 플랫폼",
     tasks: [
       "패밀리 앱(약 165개)의 짧은 업데이트 주기에 대응해 중요도별 타임박싱(3~5시간/1~2시간) 검증 수립",
@@ -68,8 +73,8 @@ const infoData = {
     { title: "정보처리기사 (실기 준비 중 / 필기 합격)", issuer: "한국산업인력공단", date: "2025" }
   ],
   education: [
-    { school: "배화여자대학교", degree: "소프트웨어학과 (학사)", period: "2025 - 2026", icon: "src/assets/배화여대로고.png" },
-    { school: "배화여자대학교", degree: "보안융합학과 (전문학사)", period: "2022 - 2025", icon: "src/assets/배화여대로고.png" }
+    { school: "배화여자대학교", degree: "소프트웨어학과 (학사)", period: "2025 - 2026", icon: schoolImg },
+    { school: "배화여자대학교", degree: "보안융합학과 (전문학사)", period: "2022 - 2025", icon: schoolImg }
   ],
   skills: ["Postman (API Testing)", "Jira / Confluence", "Chrome DevTools", "Web/App (iOS·Android)"]
 };
@@ -160,7 +165,7 @@ function App() {
                   <div className="project-title-group">
                     {/* 아이콘 이미지 영역 */}
                     <div className="icon-placeholder">
-                      <img src={project.icon} alt={`${project.company} 아이콘`} onError={(e) => { e.target.style.display = 'none'; }} />
+                      {project.icon}
                       {/* <span className="icon-fallback">🏢</span> */}
                     </div>
                     <div>
@@ -224,10 +229,10 @@ function App() {
             <section className="profile-section">
               <div className="profile-image-container">
                 {/* 사진 노출 영역 */}
-                <img src="src/assets/증명사진이에요.jpg" alt="이수정 프로필" className="profile-img" onError={(e) => { e.target.style.display = 'none'; }} />
+                <img src={profileImg} alt="이수정 프로필" className="profile-img" onError={(e) => { e.target.style.display = 'none'; }} />
                 <div className="profile-img-fallback">
                   {/* <span>📸</span> */}
-                  <p>profile.img</p>
+                  {/* <p>profile.img</p> */}
                 </div>
               </div>
 
@@ -250,7 +255,7 @@ function App() {
                     {infoData.education.map((edu, i) => (
                       <div key={i} className="mini-item">
                         <div className="mini-icon">
-                          <img src={edu.icon} alt="학교" onError={(e) => { e.target.style.display = 'none'; }} />
+                          <img src={edu.icon} alt="학교"/>
                           {/* <span>🏫</span> */}
                         </div>
                         <div>
